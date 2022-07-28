@@ -1,3 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&family=Playfair+Display:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Inconsolata", monospace;
+  background-color: #BEE3DB;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  color: #555B6E;
+  letter-spacing: 0.1rem;
+  text-shadow: 1px 2px 2px #89B0AE;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: #555B6E;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.sidebar-toggle:hover {
+  color: rgba(113, 119, 136, 0.641);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FAF9F9;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  transition: all 0.3s linear;
+  transform: translate(-100%);
+}
+.sidebar .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.sidebar .sidebar-header h1 {
+  justify-self: center;
+  height: 40px;
+}
+.sidebar .sidebar-header .close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border-color: transparent;
+  color: #555B6E;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.sidebar .sidebar-header .close-btn:hover {
+  color: #89B0AE;
+  transform: rotate(180deg);
+}
+
+.show-sidebar {
+  transform: translate(0);
+}
+
+.links a {
+  display: block;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  padding: 1rem 1.5rem;
+  color: #89B0AE;
+  transition: all 0.3s linear;
+}
+.links a:hover {
+  background: #BEE3DB;
+  color: #555B6E;
+  padding-left: 1.75rem;
+}
+
+.social-icons {
+  justify-self: center;
+  display: flex;
+  padding-bottom: 2rem;
+}
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: #555B6E;
+  transition: all 0.3s linear;
+}
+.social-icons a:hover {
+  color: rgba(113, 119, 136, 0.641);
+}
+
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,137 @@
+//fonts 
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&family=Playfair+Display:wght@600&display=swap');
+
+//variables 
+$color-blue-1: #BEE3DB;
+$color-blue-2: #89B0AE;
+$color-grey-1: #555B6E;
+$color-grey-2: rgba(113, 119, 136, 0.641);
+$color-whiteish: #FAF9F9;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background-color: $color-blue-1;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: $color-grey-1;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 2px 2px $color-blue-2;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: $color-grey-1;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    // animation: bounce 2s ease-in-out infinite;
+
+    &:hover {
+        color: $color-grey-2;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-whiteish;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    transition: all 0.3s linear;
+    transform: translate(-100%);
+
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+
+        h1 {
+            justify-self: center;
+            height: 40px;
+        }
+
+        .close-btn {
+            font-size: 1.75rem;
+            background: transparent;
+            border-color: transparent;
+            color: $color-grey-1;
+            transition: all 0.3s linear;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-blue-2;
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.show-sidebar {
+    transform: translate(0);
+}
+
+.links a {
+    display: block;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    padding: 1rem 1.5rem;
+    color: $color-blue-2;
+    transition: all 0.3s linear;
+
+    &:hover {
+        background: $color-blue-1;
+        color: $color-grey-1;
+        padding-left: 1.75rem;
+    }
+}
+
+.social-icons {
+    justify-self: center;
+    display: flex;
+    padding-bottom: 2rem;
+
+    a {
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+        color: $color-grey-1;
+        transition: all 0.3s linear;
+
+        &:hover {
+            color: $color-grey-2;
+        }
+    }
+}
+
+@media screen and (min-width: 676px) {
+    .sidebar {
+        width: 400px;
+    }
+}
